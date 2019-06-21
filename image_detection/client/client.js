@@ -8,7 +8,7 @@ function setup()
     //create canvas
     createCanvas(400,300);
     //imitialize the image in a object
-    img_dog=createImg('./images/boat.jpg',imageReady);
+    img_dog=createImg('./images/unknown.jpg',imageReady);
 
 
     //hide the image
