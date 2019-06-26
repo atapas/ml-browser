@@ -8,27 +8,27 @@ function setup()
     //create canvas
     createCanvas(400,300);
     //imitialize the image in a object
-    img_dog=createImg('./images/unknown.jpg',imageReady);
+    inputImage = createImg('./images/unknown.jpg', imageReady);
 
 
     //hide the image
-    img_dog.hide();
+    inputImage.hide();
 
     //initialize the mobilenet object with a callback
-    mobileNet= ml5.imageClassifier('MobileNet',ModelLoaded);
+    mobileNet = ml5.imageClassifier('MobileNet', ModelLoaded);
 
 }
 //callback function for when the image is ready
 function imageReady()
 {
-    image(img_dog,0,0,400,300);
+    image(inputImage,0,0,400,300);
 }
 //callback function for when the model is ready for prediction
 function ModelLoaded()
 {
     console.log('Model is ready');
     //predicting the image
-    mobileNet.predict(img_dog,result)
+    mobileNet.predict(inputImage,result)
 }
 //callback function to get the results
 function result(err,res)
